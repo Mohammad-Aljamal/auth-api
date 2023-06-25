@@ -6,6 +6,8 @@ const bearer = require('../api-server/src/middleware/bearer');
 const { db, users } = require('../api-server/src/models/index');
 const jwt = require('jsonwebtoken');
 
+
+
 let userInfo = {
   admin: { username: 'admin', password: 'password' },
 };
@@ -15,6 +17,7 @@ beforeAll(async () => {
   await db.sync();
   await users.create(userInfo.admin);
 });
+
 
 
 describe('Auth Middleware', () => {
@@ -67,3 +70,11 @@ describe('Auth Middleware', () => {
 afterAll(async () => {
   await db.drop();
 });
+
+
+
+
+
+
+
+
